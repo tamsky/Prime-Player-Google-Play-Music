@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<!--
+  HTML for the miniplayer/popup
+  @author Sven Ackermann (svenrecknagel@gmail.com)
+  @license BSD license
+-->
+<html>
+<head>
+<title></title>
+<link href="img/default/notconnected.png" id="favicon" rel="shortcut icon"/>
+<link rel="stylesheet" type="text/css" href="css/player.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/ga.js"></script>
+<script src="js/player.js"></script>
+</head>
+<body>
+  <div id="player">
+    <div id="top">
+      <div id="rightbuttons">
+        <a tabindex="0" id="miniplayerlink"></a>
+        <a tabindex="0" id="quicklinksBtn" class="nav" data-link="quicklinks"></a>
+        <a tabindex="0" id="lastfmUser" target="_blank"></a>
+        <a tabindex="0" id="feelingLucky"></a>
+      </div>
+      <div id="coverContainer">
+        <img id="cover" src="img/cover.png"/>
+      </div>
+      <div id="nosong">
+        <a tabindex="0"></a>
+        <a tabindex="0"></a>
+      </div>
+      <div id="song">
+        <a tabindex="0" id="track"></a>
+        <a tabindex="0" id="artist"></a>
+        <a tabindex="0" id="album"></a>
+      </div>
+      <div id="rating">
+        <div id="googleRating">
+          <div class="user-rating"></div>
+          <div class="rating-container">
+            <a tabindex="0" class="rating-5"></a>
+            <a tabindex="0" class="rating-4"></a>
+            <a tabindex="0" class="rating-3"></a>
+            <a tabindex="0" class="rating-2"></a>
+            <a tabindex="0" class="rating-1"></a>
+          </div>
+        </div>
+        <div id="lastfmRating">
+          <a tabindex="0"></a>
+          <img src="img/ajax-loader.gif"/>
+        </div>
+      </div>
+    </div>
+    <div id="time">
+      <div id="currentTime"></div>
+      <div id="songTime"></div>
+      <div id="timeBarHolder">
+        <div id="timeBar"></div>
+        <div id="scrobblePosition"></div>
+      </div>
+    </div>
+    <div id="playControls">
+      <a tabindex="0" id="prev"></a>
+      <a tabindex="0" id="pause" class="playPause"></a>
+      <a tabindex="0" id="resume" class="playPause"></a>
+      <a tabindex="0" id="next"></a>
+      <a tabindex="0" id="repeat"></a>
+      <a tabindex="0" id="shuffle"></a>
+      <a tabindex="0" id="showfavorites" class="nav" data-link="favorites"></a>
+      <a tabindex="0" id="showlyrics" data-link="lyrics"></a>
+      <a tabindex="0" id="volume"></a>
+      <div id="volumeBarContainer">
+        <div id="volumeBarBorder">
+          <div id="volumeBar"></div>
+        </div>
+      </div>
+    </div>
+    <div id="lastfmInfo">
+      <div class="userplaycount"></div>
+      <div class="playcount"></div>
+      <div class="listeners"></div>
+    </div>
+  </div>
+  <div id="nav">
+    <div id="navHead">
+      <a tabindex="0" class="back"></a>
+      <a tabindex="0" class="close"></a>
+      <a tabindex="0" class="fav"></a>
+      <span></span>
+      <input type="search"/>
+    </div>
+    <div id="navlistContainer">
+      <div id="navlist"></div>
+    </div>
+    <div id="quicklinks"></div>
+    <div id="favoritesContainer">
+      <div id="favorites"></div>
+    </div>
+    <div id="lyrics">
+      <div class="content"></div>
+      <div class="credits"></div>
+    </div>
+  </div>
+</body>
+</html>

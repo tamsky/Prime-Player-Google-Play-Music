@@ -1,0 +1,281 @@
+/* SCSS for the options page */
+/*!
+ * @author Sven Ackermann (svenrecknagel@gmail.com)
+ * @license BSD license
+ */
+body {
+  min-width: 800px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.syncenabled .pp-option:not([local]) label:after {
+  content: "*";
+  padding-left: 1ex;
+  float: right;
+}
+
+iron-pages {
+  float: left;
+  width: 70%;
+  margin-bottom: 10px;
+  &.f-beg .adv, &.f-beg .exp, &.f-adv .exp {
+    display: none;
+    &.newFeature {
+      label:after {
+        font-style: italic;
+        font-weight: normal;
+        float: right;
+      }
+    }
+  }
+  &.f-beg .adv.newFeature label:after {
+    content: " (__MSG_setting_optionsMode_adv__)";
+  }
+  &.f-beg, &.f-adv {
+    .exp.newFeature label:after {
+      content: " (__MSG_setting_optionsMode_exp__)";
+    }
+  }
+  
+  &.star .thumbs, .starsOnly {
+    display: none;
+  }
+  &.thumbs {
+    .rate-2, .rate-3, .rate-4 {
+      display: none;
+    }
+  }
+  &.star .starsOnly {
+    display: block;
+  }
+}
+
+pp-tab {
+  height: 450px;
+  overflow-y: auto;
+  padding-right: 10px;
+  .sub {
+    padding-left: 20px;
+  }
+  .sub2 {
+    padding-left: 40px;
+  }
+}
+
+.toggle-container {
+  cursor: pointer;
+}
+
+pp-toggle {
+  margin-bottom: 4px;
+}
+
+#tools {
+  overflow: hidden;
+  padding: 5px 10px 5px 20px;
+  paper-button {
+    margin-bottom: 10px;
+  }
+}
+
+#downloadLink, #importInput {
+  display: none;
+}
+
+.tab-hint {
+  margin: 2ex;
+}
+
+.hint-trigger {
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1ex;
+  color: green;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  bottom: 1px;
+}
+
+.label-is-floating .hint-trigger {
+  width: 24px;
+  height: 24px;
+}
+
+.pp-option[disabled] .hint-trigger {
+  color: grey;
+}
+
+pp-toggle .hint-trigger {
+  height: 18px;
+  display: inline-flex;
+  margin-left: 0;
+  bottom: -1px;
+}
+
+#credits > div {
+  float: left;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  > a {
+    float: left;
+    margin-right: 2ex;
+    margin-bottom: 0;
+  }
+}
+
+#changelog {
+  clear: both;
+  display: none;
+  h1 {
+    display: inline-block;
+    margin-right: 1ex;
+  }
+  > a {
+    font-weight: bold;
+  }
+  li {
+    font-size: 12px;
+    &.B:before {
+      content: "B: ";
+    }
+    &.I:before {
+      content: "I: ";
+    }
+    &.F:before {
+      content: "F: ";
+    }
+    &.B.I:before {
+      content: "I/B: ";
+    }
+    &.F.I:before {
+      content: "F/I: ";
+    }
+  }
+  .F, .I, .B, h3 {
+    display: none;
+  }
+  &.F .F, &.I .I, &.B .B {
+    display: list-item;
+  }
+  > div {
+    font-size: 0;
+  }
+  &.V {
+    h3 {
+      display: block;
+    }
+    > div {
+      font-size: 12px;
+    }
+  }
+  h3 {
+    margin-bottom: 1ex;
+    font-weight: bold;
+    > a {
+      text-decoration: none;
+    }
+  }
+}
+
+#lastfmStatus {
+  height: 36px;
+  a {
+    margin-left: 1ex;
+    &.disconnected {
+      text-decoration: none;
+      color: black;
+      cursor: text;
+    }
+  }
+  > .status {
+    display: none;
+    margin-left: 0.5ex;
+    vertical-align: top;
+    height: 20px;
+    margin-top: 6px;
+  }
+  > #lastfmSuccess {
+    color: green;
+  }
+  > #lastfmFailure {
+    color: red;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+#lastfmStatus a, #shortcutsLink {
+  text-decoration: underline;
+  color: -webkit-link;
+}
+
+fieldset {
+  padding: 2ex;
+  margin: 2ex 0;
+}
+
+#iconClickActionTitle {
+  color: #737373;
+  font-size: 12px;
+}
+
+.newFeature {
+  display: block !important;
+  h3, ul, &.pp-option .toggle-label, &.pp-option label, a {
+    color: #FF8F00 !important;
+  }
+}
+
+#optionsMode {
+  margin-bottom: 6px;
+}
+
+#notificationDisabledWarning {
+  display: none;
+  max-width: 400px;
+  color: red;
+  margin-bottom: 2ex;
+  iron-icon {
+    float: left;
+    margin: 1ex 2ex 0 0;
+  }
+}
+  
+.notifDisabled {
+  #notificationDisabledWarning {
+    display: block;
+  }
+  .notif {
+    display: none;
+  }
+}
+
+#timerStatus {
+  margin-top: 20px;
+  .stopTimer {
+    float: right;
+  }
+  > div {
+    margin-top: 16px;
+  }
+}
+
+#confirmDialog p {
+  white-space: pre-line;
+  word-wrap: break-word
+}
+
+paper-badge.hidden {
+  visibility: hidden;
+}
+
+pp-lyricsproviders .paper-toggle-button.toggle-label {
+  pointer-events: initial;
+}

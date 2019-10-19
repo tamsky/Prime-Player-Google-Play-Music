@@ -1,0 +1,9 @@
+*.map
+*.css
+build
+.sass-cache
+build.crx
+build.pem
+PrimePlayer.zip
+node_modules
+*.log
