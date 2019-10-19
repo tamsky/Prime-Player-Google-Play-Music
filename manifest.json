@@ -1,0 +1,121 @@
+{
+   "author": "Sven Ackermann",
+   "background": {
+      "persistent": false,
+      "scripts": [ "js/jquery.min.js", "js/ga.js", "js/bp.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "38": "img/icon/default/notconnected.png"
+      },
+      "default_popup": "player.html",
+      "default_title": "__MSG_extTitle__"
+   },
+   "commands": {
+      "feelingLucky": {
+         "description": "__MSG_feelingLucky__"
+      },
+      "ff": {
+         "description": "__MSG_command_ff__"
+      },
+      "loveUnloveSong": {
+         "description": "__MSG_command_loveUnloveSong__"
+      },
+      "nextSong": {
+         "description": "__MSG_nextSong__",
+         "global": true,
+         "suggested_key": {
+            "default": "MediaNextTrack"
+         }
+      },
+      "openLyrics": {
+         "description": "__MSG_command_openLyrics__"
+      },
+      "openMiniplayer": {
+         "description": "__MSG_openMiniplayer__",
+         "suggested_key": {
+            "default": "Alt+W"
+         }
+      },
+      "playPause": {
+         "description": "__MSG_playPause__",
+         "global": true,
+         "suggested_key": {
+            "default": "MediaPlayPause"
+         }
+      },
+      "prevSong": {
+         "description": "__MSG_prevSong__",
+         "global": true,
+         "suggested_key": {
+            "default": "MediaPrevTrack"
+         }
+      },
+      "rate-1": {
+         "description": "__MSG_command_rate1__"
+      },
+      "rate-2": {
+         "description": "__MSG_command_rate2__"
+      },
+      "rate-3": {
+         "description": "__MSG_command_rate3__"
+      },
+      "rate-4": {
+         "description": "__MSG_command_rate4__"
+      },
+      "rate-5": {
+         "description": "__MSG_command_rate5__"
+      },
+      "rew": {
+         "description": "__MSG_command_rew__"
+      },
+      "showToast": {
+         "description": "__MSG_command_showToast__"
+      },
+      "toggleRepeat": {
+         "description": "__MSG_command_toggleRepeat__"
+      },
+      "toggleShuffle": {
+         "description": "__MSG_command_toggleShuffle__"
+      },
+      "volumeDown": {
+         "description": "__MSG_command_volumeDown__"
+      },
+      "volumeMute": {
+         "description": "__MSG_command_volumeMute__"
+      },
+      "volumeUp": {
+         "description": "__MSG_command_volumeUp__"
+      }
+   },
+   "content_scripts": [ {
+      "css": [ "css/gpm.css" ],
+      "js": [ "js/jquery.min.js", "js/cs.js" ],
+      "matches": [ "*://play.google.com/music/listen*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+   "default_locale": "en",
+   "description": "__MSG_extDesc__",
+   "icons": {
+      "128": "img/icon-128x128.png",
+      "16": "img/icon-16x16.png",
+      "48": "img/icon-48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCtBwmcNVs4EF/5EHOstfl3X21yzBIc9iD4MhH+hPg6zklXXEMnzuz19jGBRxtbjBAQOaM5MnKqBREeQmceLRbILQuC6mwpiGjeja17pFaSWhPXws87k/wgAia1vZ18aQY7LAPloeFrNmki1/gf2IpsKBwJ/0TD+EVIy6p9ilr8SQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "50",
+   "name": "Prime Player for Google Play Music™",
+   "omnibox": {
+      "keyword": "pp"
+   },
+   "optional_permissions": [ "http://www.songlyrics.com/*", "http://lyrics.wikia.com/*", "https://www.musixmatch.com/*" ],
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options.html"
+   },
+   "permissions": [ "*://play.google.com/music/listen*", "notifications", "storage", "contextMenus", "idle", "power" ],
+   "short_name": "__MSG_extTitle__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "4.3.1",
+   "web_accessible_resources": [ "js/injected.js", "img/icon-tabconnected.png", "img/cmd/openLyrics.png", "img/icon-48x48.png", "img/ajax-loader.gif", "img/reload.png", "lastfmCallback.html" ]
+}
